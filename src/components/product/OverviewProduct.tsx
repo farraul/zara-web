@@ -6,6 +6,7 @@ import React, { useEffect, useState } from "react";
 import Image from "next/image";
 import Button from "../commons/Button";
 import { useProductCurrent } from "@/src/context/ProductContext";
+import { Product, StorageOption } from "@/src/models/Product";
 
 interface Props {
   id: string;
@@ -14,6 +15,7 @@ interface Props {
 const OverviewProduct = ({ id }: Props) => {
   const productService = new ProductService();
   const [colorCurrent, setColorCurrent] = useState<string>("");
+  const [storageCurrent, setStorageCurrent] = useState<StorageOption | null>();
   const { handleSelected } = useProductCurrent();
   const { data, status } = useQuery({
     queryKey: [`product-${id}`],
@@ -59,6 +61,10 @@ const OverviewProduct = ({ id }: Props) => {
 
   const handleColorCurrent = (color: string) => {
     setColorCurrent(color);
+  };
+
+  const handleStorageCurrent = (storage: StorageOption) => {
+    setStorageCurrent(storage);
   };
 
   return (
@@ -122,11 +128,16 @@ const OverviewProduct = ({ id }: Props) => {
 
           <div className="space-y-4">
             <h2 className="text-xl font-bold text-gray-900">Almacenamiento</h2>
-            <div className="flex space-x-4">
+            <div className={`flex space-x-4`}>
               {storageOptions.map((storage) => (
                 <button
+                  onClick={() => handleStorageCurrent(storage)}
                   key={storage.capacity}
-                  className="px-4 py-2 border-2 border-gray-200 rounded-lg"
+                  className={`px-4 py-2 border-2 rounded-lg ${
+                    storageCurrent?.capacity === storage.capacity
+                      ? "border-black"
+                      : "border-gray-200"
+                  }`}
                 >
                   <span className="text-gray-700">{storage.capacity}</span>
                   <span className="text-gray-500 ml-2">
