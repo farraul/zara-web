@@ -5,7 +5,7 @@ import { request } from "./instance";
 class ProductService {
   getProducts = async (
     offset: number = 1,
-    limit: number = 20,
+    limit: number = 10,
     search: string = ""
   ): Promise<ProductSummary[]> => {
     const params = getParamsPaginate(offset, limit, search);

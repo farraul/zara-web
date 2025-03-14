@@ -45,3 +45,9 @@ export interface ProductSummary
   extends Pick<Product, "id" | "name" | "brand" | "basePrice"> {
   imageUrl: string;
 }
+
+export interface ProductSelected {
+  id: string;
+  colorOption: ColorOption;
+  storageOptions: StorageOption;
+}

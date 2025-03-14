@@ -10,16 +10,16 @@ const Header = () => {
         <Image
           src={"/icons/logotype.svg"}
           alt="image reference logotype"
-          width={24}
-          height={24}
+          width={160}
+          height={160}
         />
       </span>
       <div className="flex items-center gap-2">
         <Image
           src={"/icons/cart.svg"}
           alt="image reference cart"
-          width={15}
-          height={15}
+          width={24}
+          height={24}
         />
         <span className="font-light text-lg">0</span>
       </div>

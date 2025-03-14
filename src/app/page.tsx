@@ -1,7 +1,8 @@
 import React from "react";
+import ContainerProduct from "../components/product/ContainerProduct";
 
 const page = () => {
-  return <div className="min-h-screen"></div>;
+  return <ContainerProduct />;
 };
 
 export default page;

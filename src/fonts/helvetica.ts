@@ -3,7 +3,7 @@ import localFont from "next/font/local";
 const helvetica = localFont({
   src: [
     {
-      path: "../../public/fonts/helvetica/helvetica-light.ttf",
+      path: "../../public/fonts/helvetica/Helvetica-light.ttf",
       weight: "300",
       style: "light",
     },

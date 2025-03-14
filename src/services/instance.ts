@@ -1,9 +1,7 @@
 import axios from "axios";
-import { RequestOptions } from "../models/Request";
 
 const instance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}`,
-  withCredentials: true,
   headers: {
     "x-api-key": `${process.env.NEXT_PUBLIC_API_KEY}`,
   },
@@ -16,6 +14,14 @@ instance.interceptors.request.use(
     return Promise.reject(error);
   }
 );
+
+interface RequestOptions {
+  endpoint: string;
+  method: "get" | "post" | "put" | "patch" | "delete";
+  data?: Record<string, unknown> | FormData;
+  params?: Record<string, unknown>;
+  headers?: Record<string, string>;
+}
 
 export const request = async ({
   method,
