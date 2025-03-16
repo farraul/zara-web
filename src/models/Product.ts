@@ -48,6 +48,7 @@ export interface ProductSummary
 
 export interface ProductSelected {
   id: string;
+  name: string;
   colorOption: ColorOption;
   storageOptions: StorageOption;
 }
