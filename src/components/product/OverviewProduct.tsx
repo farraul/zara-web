@@ -16,7 +16,7 @@ interface Props {
 const OverviewProduct = ({ id }: Props) => {
   const productService = new ProductService();
   const router = useRouter();
-  const { data, status } = useQuery({
+  const { data, status, error } = useQuery({
     queryKey: [`product-${id}`],
     queryFn: async () => await productService.getProduct(id),
     enabled: !!id,
@@ -35,7 +35,7 @@ const OverviewProduct = ({ id }: Props) => {
       {status === "pending" ? (
         <Loader />
       ) : status === "error" ? (
-        <Custom404 />
+        <Custom404 msgCustom={error as unknown as string} />
       ) : (
         <DetailsProduct data={data} />
       )}

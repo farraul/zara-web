@@ -1,9 +1,8 @@
 "use client";
 
-import React, { useState } from "react";
+import React from "react";
 
 import FieldError from "./FieldError";
-import Image from "next/image";
 
 type AttributeProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
@@ -32,29 +31,34 @@ const FieldInput = ({
   error,
   ...props
 }: Props) => {
-  const [currentType, setCurrentType] = useState<typeInput>(type);
-
   return (
     <div
-      className={`${
-        classAditional || "max-w-xl"
-      } flex w-full flex-col relative text-black items-center justify-start`}
+      className={`${classAditional}"
+        } flex w-full flex-col relative text-black items-center justify-start`}
     >
       <div className="relative w-full">
+        <input
+          id={name ?? id}
+          type={type}
+          required={isRequired}
+          className={`pr-5 border-b border-black py-1 w-full focus:border-b-1 focus:border-primary transition-colors focus:outline-none peer bg-inherit`}
+          name={name}
+          {...props}
+        />
         <label
-          className={`font-semibold capitalize absolute left-5 top-3 text-xs -translate-y-1/2`}
+          className={`absolute left-0 top-1 cursor-text peer-focus:text-xs peer-focus:-top-4 transition-all peer-focus:text-primary`}
           htmlFor={id}
         >
           {label}
         </label>
-        <input
-          id={name ?? id}
-          required={isRequired}
-          type={currentType}
-          className={`w-full pr-20 pl-5 rounded-[19px]  focus:outline-none border-black  font-light bg-[#F3F4F6] py-4 flex items-center`}
-          name={name}
-          {...props}
-        />
+        {props.value ? (
+          <button
+            type="button"
+            className="absolute -translate-y-1/2 top-1/2 right-5 p-1 w-6 flex justify-center items-center h-6 cursor-pointer rounded-full transition-all hover:bg-gray-100"
+          >
+            x
+          </button>
+        ) : null}
       </div>
       <FieldError error={error} />
     </div>

@@ -1,8 +1,8 @@
 import { AxiosError } from "axios";
 
-export const formatedErrorServices = (error: any): string => {
-  const err = error as AxiosError;
-  console.error(err);
-  const messageClient = Object.values(err.response?.data as any)[0];
+export const formatedErrorServices = (err: AxiosError): string => {
+  const messageClient = Object.values(err.response?.data as any)[1];
+  console.error("Error ->", messageClient);
+
   throw messageClient;
 };

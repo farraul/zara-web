@@ -1,4 +1,5 @@
 import axios from "axios";
+import { formatedErrorServices } from "../utils/formated";
 
 const instance = axios.create({
   baseURL: `${process.env.NEXT_PUBLIC_API_URL}`,
@@ -7,11 +8,12 @@ const instance = axios.create({
   },
 });
 
-instance.interceptors.request.use(
+instance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (typeof window === "undefined") return;
-    return Promise.reject(error);
+
+    return Promise.reject(formatedErrorServices(error));
   }
 );
 
