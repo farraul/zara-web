@@ -5,11 +5,11 @@ interface Props {
   params: { productId: string };
 }
 
-export const dynamic = "auto";
-export const dynamicParams = true;
+const Page = ({ params }: Props) => {
+  console.log(" params:::", params);
+  const productId = params.productId;
 
-const page = async ({ params: { productId } }: Props) => {
   return <OverviewProduct id={productId} />;
 };
 
-export default page;
+export default Page;

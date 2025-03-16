@@ -5,7 +5,7 @@ import { useDebounce } from "./useDebounce";
 const usePaginate = () => {
   const [filter, setFilter] = useState("");
   const [currentPage, setCurrentPage] = useState(1);
-  const debouncedFilter = useDebounce<string>(filter, 1000);
+  const debouncedFilter = useDebounce<string>(filter, 500);
 
   const handlePage = (page: number) => {
     if (page) {
@@ -20,6 +20,7 @@ const usePaginate = () => {
   return {
     debouncedFilter,
     currentPage,
+    filter,
     handlePage,
     handleFilter,
   };

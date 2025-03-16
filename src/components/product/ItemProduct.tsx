@@ -15,22 +15,27 @@ const ItemProduct = ({ data }: Props) => {
   return (
     <Link
       href={`/overview/product/${id}`}
-      className="cursor-pointer w-72 hover:opacity-80 flex flex-col items-center p-4 border-2 border-black rounded-lg shadow-md hover:shadow-lg transition-shadow duration-300"
+      className="cursor-pointer w-full hover:text-white text-gray-800 h-full justify-center flex flex-col items-center p-4 border-1 border-gray-300 duration-300 relative overflow-hidden group"
     >
-      <div className="relative w-48 h-48 mb-4">
+      <div className="absolute bottom-0 left-0 w-full h-0 bg-black opacity-0 group-hover:opacity-75 group-hover:h-full transition-all duration-300 ease-in-out z-0"></div>
+
+      <div className="relative w-48 h-48 mb-4 overflow-hidden z-10">
         <Image
           src={imageUrl}
           alt={`${brand} ${name}`}
           fill
-          className="object-contain"
-          sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+          style={{ objectFit: "contain" }}
+          className="w-full h-full"
         />
       </div>
-      <div className="text-center">
-        <h2 className="text-xl font-bold text-gray-800">{name}</h2>
-        <p className="text-sm text-gray-600">{brand}</p>
-        <p className="text-lg font-semibold text-gray-900 mt-2">
-          ${basePrice.toFixed(2)}
+
+      <div className="text-center w-full flex self-end items-center justify-between z-10">
+        <div className="w-fit flex items-start text-sm flex-col font-light">
+          <p className="text-sm text-start text-gray-300">{brand}</p>
+          <h2 className="">{name}</h2>
+        </div>
+        <p className="font-light text-sm self-end">
+          {basePrice.toFixed(2)} EUR
         </p>
       </div>
     </Link>
