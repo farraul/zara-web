@@ -1,15 +1,9 @@
 "use client";
 
-import {
-  createContext,
-  Dispatch,
-  SetStateAction,
-  useContext,
-  useEffect,
-  useState,
-} from "react";
+import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { ProductSelected } from "../models/Product";
 import { toast } from "sonner";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 interface Props {
   children: React.ReactNode | React.ReactNode[];
@@ -28,23 +22,15 @@ export function useCartProduct() {
 }
 
 export const ProductProvider = ({ children }: Props) => {
-  const [storage, setStorage] = useState<ProductSelected[]>([]);
+  const [storage, setStorage] = useLocalStorage<ProductSelected[]>("cart", []);
 
   const handleSelecteds = (data: ProductSelected) => {
     const total = [...storage, data];
     toast.success(
       `Se ha añadido con éxito el teléfono: ${data.name} al carrito`
     );
-    localStorage.setItem("cart", JSON.stringify(total));
     setStorage(total);
   };
-
-  useEffect(() => {
-    const total = localStorage.getItem("cart");
-    if (total) {
-      setStorage(JSON.parse(total as string));
-    }
-  }, []);
 
   const values = {
     storage,
