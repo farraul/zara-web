@@ -12,8 +12,8 @@ instance.interceptors.response.use(
   (response) => response,
   (error) => {
     if (typeof window === "undefined") return;
-
-    return Promise.reject(formatedErrorServices(error));
+    const errorFormated = formatedErrorServices(error);
+    return Promise.reject(errorFormated);
   }
 );
 

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import "./globals.css";
+import "../styles/globals.css";
 import Header from "../components/commons/Header";
 import { helvetica } from "../fonts";
 import Provider from "../components/Provider";

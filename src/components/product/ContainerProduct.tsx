@@ -5,22 +5,17 @@ import FieldInput from "../commons/field/FieldInput";
 import { useQuery } from "@tanstack/react-query";
 import ProductService from "@/src/services/productServices";
 import ItemProduct from "./ItemProduct";
-import usePaginate from "@/src/hooks/usePaginate";
+import useFilter from "@/src/hooks/useFilter";
 import Loader from "../commons/Loader";
 
 const ContainerProduct = () => {
   const productService = new ProductService();
 
-  const {
-    currentPage: offset,
-    debouncedFilter,
-    filter,
-    handleFilter,
-  } = usePaginate();
+  const { filter, debouncedFilter, handleFilter } = useFilter();
   const { data, status } = useQuery({
-    queryKey: [`paginate-products`, debouncedFilter, offset],
+    queryKey: [`paginate-products`, debouncedFilter],
     queryFn: async () =>
-      await productService.getProducts(offset, 20, debouncedFilter),
+      await productService.getProducts(debouncedFilter, 20, 1),
     staleTime: 100 * 60,
     gcTime: 100 * 60,
     refetchOnWindowFocus: false,

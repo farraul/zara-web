@@ -4,11 +4,12 @@ import { request } from "./instance";
 
 class ProductService {
   getProducts = async (
-    offset: number = 1,
+    search: string = "",
     limit: number = 10,
-    search: string = ""
+    offset: number = 1
   ): Promise<ProductSummary[]> => {
     const params = getParamsPaginate(offset, limit, search);
+
     return request({
       method: "get",
       endpoint: `/products/?${params}`,
