@@ -6,7 +6,6 @@ interface Props {
 }
 
 const Page = ({ params }: Props) => {
-  console.log(" params:::", params);
   const productId = params.productId;
 
   return <OverviewProduct id={productId} />;
