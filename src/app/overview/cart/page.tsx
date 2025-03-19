@@ -1,8 +1,8 @@
-import ContainerCart from "@/src/components/cart/ContainerCart";
+import CartContainer from "@/src/components/cart/CartContainer";
 import React from "react";
 
 const page = () => {
-  return <ContainerCart />;
+  return <CartContainer />;
 };
 
 export default page;

@@ -8,7 +8,7 @@ import Button from "../commons/Button";
 import { ProductSelected } from "@/src/models/Product";
 import { toast } from "sonner";
 
-const ContainerCart = () => {
+const CartContainer = () => {
   const { storage, setStorage } = useCartProduct();
   const [loading, setLoading] = useState(false);
   const router = useRouter();
@@ -111,4 +111,4 @@ const ContainerCart = () => {
   );
 };
 
-export default ContainerCart;
+export default CartContainer;

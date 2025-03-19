@@ -8,7 +8,7 @@ import ItemProduct from "./ItemProduct";
 import useFilter from "@/src/hooks/useFilter";
 import Loader from "../commons/Loader";
 
-const ContainerProduct = () => {
+const ProductContainer = () => {
   const productService = new ProductService();
 
   const { filter, debouncedFilter, handleFilter } = useFilter();
@@ -56,4 +56,4 @@ const ContainerProduct = () => {
   );
 };
 
-export default ContainerProduct;
+export default ProductContainer;
