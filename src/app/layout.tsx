@@ -3,6 +3,7 @@ import "../styles/globals.css";
 import Header from "../components/commons/Header";
 import { helvetica } from "../fonts";
 import Provider from "../components/Provider";
+import "react-multi-carousel/lib/styles.css";
 
 export const metadata: Metadata = {
   title: "Zara Home",

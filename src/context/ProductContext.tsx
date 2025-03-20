@@ -3,7 +3,7 @@
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { ProductSelected } from "../models/Product";
 import { toast } from "sonner";
-import { useLocalStorage } from "../hooks/useLocalStorage";
+import useLocalStorage from "../hooks/useLocalStorage";
 
 interface Props {
   children: React.ReactNode | React.ReactNode[];

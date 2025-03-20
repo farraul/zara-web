@@ -5,8 +5,8 @@ interface Props {
   params: { productId: string };
 }
 
-const Page = ({ params }: Props) => {
-  const productId = params.productId;
+const Page = async ({ params }: Props) => {
+  const { productId } = await params;
 
   return <OverviewProduct id={productId} />;
 };
