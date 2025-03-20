@@ -1,5 +1,5 @@
 import React from "react";
-import OverviewProduct from "@/src/components/product/OverviewProduct";
+import ProductOverview from "@/src/components/product/ProductOverview";
 
 interface Props {
   params: { productId: string };
@@ -8,7 +8,7 @@ interface Props {
 const Page = async ({ params }: Props) => {
   const { productId } = await params;
 
-  return <OverviewProduct id={productId} />;
+  return <ProductOverview id={productId} />;
 };
 
 export default Page;

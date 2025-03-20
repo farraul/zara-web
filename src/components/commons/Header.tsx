@@ -17,7 +17,9 @@ const Header = () => {
           src={"/icons/logotype.svg"}
           alt="image reference logotype"
           width={120}
-          height={120}
+          height={100}
+          style={{ width: "auto", height: "auto" }}
+          priority={true}
         />
       </Link>
       <Link
@@ -27,11 +29,12 @@ const Header = () => {
         <Image
           src={"/icons/cart.svg"}
           alt="image reference cart"
+          style={{ width: "auto", height: "auto" }}
           width={36}
           height={36}
         />
         <span className="font-light text-2xl text-black -mb-2">
-          {storage.length ?? 0}
+          {storage && storage.length > 0 ? storage.length : 0}
         </span>
       </Link>
     </header>

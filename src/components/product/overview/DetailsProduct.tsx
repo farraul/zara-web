@@ -56,6 +56,7 @@ const DetailsProduct = ({ data }: Props) => {
                 src={colorCurrent?.imageUrl as string}
                 alt={`${data.brand} ${data.name}`}
                 fill
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                 style={{ objectFit: "contain" }}
                 className="w-full h-full"
               />
@@ -94,7 +95,7 @@ const DetailsProduct = ({ data }: Props) => {
 
       <div className="w-full flex flex-col my-10 gap-10 items-start justify-center">
         <h2 className="uppercase text-xl font-light text-gray-900">
-          Similarrr items
+          Similar items
         </h2>
         <CarouselComponent>
           {data.similarProducts.map((product) => (

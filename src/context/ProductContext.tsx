@@ -1,5 +1,3 @@
-"use client";
-
 import { createContext, Dispatch, SetStateAction, useContext } from "react";
 import { ProductSelected } from "../models/Product";
 import { toast } from "sonner";

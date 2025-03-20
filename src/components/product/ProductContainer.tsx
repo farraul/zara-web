@@ -27,7 +27,7 @@ const ProductContainer = () => {
         <FieldInput
           label=""
           classAditional="w-full max-w-none"
-          placeholder="Search for a smartphone"
+          placeholder="Search for a smartphone..."
           type="text"
           value={filter}
           onChange={(event) => handleFilter(String(event.target.value))}

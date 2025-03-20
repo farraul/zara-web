@@ -13,7 +13,7 @@ interface Props {
   id: string;
 }
 
-const OverviewProduct = ({ id }: Props) => {
+const ProductOverview = ({ id }: Props) => {
   const productService = new ProductService();
   const router = useRouter();
   const { data, status, error } = useQuery({
@@ -43,4 +43,4 @@ const OverviewProduct = ({ id }: Props) => {
   );
 };
 
-export default OverviewProduct;
+export default ProductOverview;
