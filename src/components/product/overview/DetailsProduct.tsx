@@ -1,16 +1,16 @@
-"use client";
+'use client';
 
-import { Product } from "@/src/models/Product";
-import Image from "next/image";
-import React, { useEffect, useMemo } from "react";
-import StorageSelected from "./StorageSelected";
-import ColorSelected from "./ColorSelected";
-import Button from "../../commons/Button";
-import { useCartProduct } from "@/src/context/ProductContext";
-import useProduct from "@/src/hooks/useProduct";
-import SpecificationsSelected from "./SpecificationsSelected";
-import ItemProduct from "../ItemProduct";
-import CarouselComponent from "../../carousel/Carousel";
+import { Product } from '@/src/models/Product';
+import Image from 'next/image';
+import React, { useEffect, useMemo } from 'react';
+import StorageSelected from './StorageSelected';
+import ColorSelected from './ColorSelected';
+import Button from '../../commons/Button';
+import { useCartProduct } from '@/src/context/ProductContext';
+import useProduct from '@/src/hooks/useProduct';
+import SpecificationsSelected from './SpecificationsSelected';
+import ItemProduct from '../ItemProduct';
+import CarouselComponent from '../../carousel/Carousel';
 
 interface Props {
   data: Product;
@@ -57,7 +57,7 @@ const DetailsProduct = ({ data }: Props) => {
                 alt={`${data.brand} ${data.name}`}
                 fill
                 sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: 'contain' }}
                 className="w-full h-full"
               />
             </div>

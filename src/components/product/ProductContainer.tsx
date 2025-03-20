@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React from "react";
-import FieldInput from "../commons/field/FieldInput";
-import { useQuery } from "@tanstack/react-query";
-import ProductService from "@/src/services/productServices";
-import ItemProduct from "./ItemProduct";
-import useFilter from "@/src/hooks/useFilter";
-import Loader from "../commons/Loader";
+import React from 'react';
+import FieldInput from '../commons/field/FieldInput';
+import { useQuery } from '@tanstack/react-query';
+import ProductService from '@/src/services/productServices';
+import ItemProduct from './ItemProduct';
+import useFilter from '@/src/hooks/useFilter';
+import Loader from '../commons/Loader';
 
 const ProductContainer = () => {
   const productService = new ProductService();
@@ -34,7 +34,7 @@ const ProductContainer = () => {
           name="filter"
           id="filter"
         />
-        {status === "success" ? (
+        {status === 'success' ? (
           <>
             <span className="text-gray-600 text-lg">
               {data?.length} results

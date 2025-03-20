@@ -1,9 +1,9 @@
-import { useState } from "react";
+import { useState } from 'react';
 
-import { useDebounce } from "./useDebounce";
+import { useDebounce } from './useDebounce';
 
 const useFilter = () => {
-  const [filter, setFilter] = useState("");
+  const [filter, setFilter] = useState('');
   const debouncedFilter = useDebounce<string>(filter, 500);
 
   const handleFilter = (filter: string) => {

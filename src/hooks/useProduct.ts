@@ -1,5 +1,5 @@
-import { useState } from "react";
-import { ColorOption, StorageOption } from "../models/Product";
+import { useState } from 'react';
+import { ColorOption, StorageOption } from '../models/Product';
 
 const useProduct = () => {
   const [colorCurrent, setColorCurrent] = useState<ColorOption>();

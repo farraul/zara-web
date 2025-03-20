@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { StorageOption } from "@/src/models/Product";
-import React from "react";
+import { StorageOption } from '@/src/models/Product';
+import React from 'react';
 
 interface Props {
   storageOptions: StorageOption[];
@@ -26,8 +26,8 @@ const StorageSelected = ({
             key={storage.capacity}
             className={`px-8 cursor-pointer hover:border-black transition-all py-4 border ${
               storageCurrent?.capacity === storage.capacity
-                ? "border-black"
-                : "border-gray-300"
+                ? 'border-black'
+                : 'border-gray-300'
             }`}
           >
             <span className="text-gray-700">{storage.capacity}</span>

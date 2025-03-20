@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import React from "react";
+import React from 'react';
 
-import FieldError from "./FieldError";
+import FieldError from './FieldError';
 
 type AttributeProps = React.DetailedHTMLProps<
   React.InputHTMLAttributes<HTMLInputElement>,
   HTMLInputElement
 >;
 
-type typeInput = "text" | "password" | "number" | "email" | "";
+type typeInput = 'text' | 'password' | 'number' | 'email' | '';
 
 type Props = {
   id: string;
@@ -26,7 +26,7 @@ const FieldInput = ({
   id,
   isRequired,
   classAditional,
-  type = "text",
+  type = 'text',
   name,
   error,
   ...props

@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import React, { useState } from "react";
-import { useCartProduct } from "@/src/context/ProductContext";
-import Image from "next/image";
-import { useRouter } from "next/navigation";
-import Button from "../commons/Button";
-import { ProductSelected } from "@/src/models/Product";
-import { toast } from "sonner";
+import React, { useState } from 'react';
+import { useCartProduct } from '@/src/context/ProductContext';
+import Image from 'next/image';
+import { useRouter } from 'next/navigation';
+import Button from '../commons/Button';
+import { ProductSelected } from '@/src/models/Product';
+import { toast } from 'sonner';
 
 const CartContainer = () => {
   const { storage, setStorage } = useCartProduct();
@@ -44,7 +44,7 @@ const CartContainer = () => {
         Cart ({storage.length})
       </h1>
       <div
-        className={`space-y-6 w-full ${storage.length === 0 ? "h-[50vh]" : ""}`}
+        className={`space-y-6 w-full ${storage.length === 0 ? 'h-[50vh]' : ''}`}
       >
         {storage.map((item, index) => (
           <div
@@ -56,7 +56,7 @@ const CartContainer = () => {
                 src={item.colorOption.imageUrl}
                 alt={`${item.name} - ${item.colorOption.name}`}
                 fill
-                style={{ objectFit: "contain" }}
+                style={{ objectFit: 'contain' }}
                 className="rounded-lg"
               />
             </div>
@@ -91,7 +91,7 @@ const CartContainer = () => {
         <div className="flex whitespace-nowrap w-full max-w-xl mx-auto flex-row gap-4">
           <Button
             type="button"
-            onClick={() => router.push("/")}
+            onClick={() => router.push('/')}
             className="rounded-none w-full bg-white border border-black flex justify-center items-center text-black text-sm xl:text-xl hover:bg-gray-100"
           >
             Continue Shopping

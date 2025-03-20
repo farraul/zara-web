@@ -1,5 +1,5 @@
-import React from "react";
-import ProductOverview from "@/src/components/product/ProductOverview";
+import React from 'react';
+import ProductOverview from '@/src/components/product/ProductOverview';
 
 interface Props {
   params: { productId: string };

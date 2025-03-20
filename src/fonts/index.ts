@@ -1,3 +1,3 @@
-import helvetica from "./helvetica";
+import helvetica from './helvetica';
 
 export { helvetica };

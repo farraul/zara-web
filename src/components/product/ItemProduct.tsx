@@ -1,9 +1,9 @@
-"use client";
+'use client';
 
-import React from "react";
-import Image from "next/image";
-import { ProductSummary } from "@/src/models/Product";
-import Link from "next/link";
+import React from 'react';
+import Image from 'next/image';
+import { ProductSummary } from '@/src/models/Product';
+import Link from 'next/link';
 
 interface Props {
   data: ProductSummary;
@@ -25,7 +25,7 @@ const ItemProduct = ({ data }: Props) => {
           alt={`${brand} ${name}`}
           fill
           sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-          style={{ objectFit: "contain" }}
+          style={{ objectFit: 'contain' }}
           className="w-full h-full"
         />
       </div>

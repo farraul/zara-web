@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import Link from "next/link";
-import React from "react";
+import Link from 'next/link';
+import React from 'react';
 
 interface Props {
   msgCustom?: string;
@@ -21,7 +21,7 @@ const Custom404 = ({ msgCustom }: Props) => {
             Somethings missing.
           </p>
           <p className="mb-4 text-lg font-light text-gray-500 ">
-            {typeof msgCustom === "string" ? msgCustom : msgDefault}
+            {typeof msgCustom === 'string' ? msgCustom : msgDefault}
           </p>
           <Link
             href="/"

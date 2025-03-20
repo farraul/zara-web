@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { ColorOption } from "@/src/models/Product";
-import React from "react";
+import { ColorOption } from '@/src/models/Product';
+import React from 'react';
 
 interface Props {
   colorOptions: ColorOption[];
@@ -28,8 +28,8 @@ const ColorSelected = ({
               style={{ backgroundColor: color.hexCode }}
               className={`w-6 cursor-pointer hover:border-black transition-all h-6 border ${
                 colorCurrent?.imageUrl === color.imageUrl
-                  ? "border-black"
-                  : "border-gray-300"
+                  ? 'border-black'
+                  : 'border-gray-300'
               }`}
             />
           ))}

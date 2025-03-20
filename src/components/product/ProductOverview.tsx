@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import ProductService from "@/src/services/productServices";
-import { useQuery } from "@tanstack/react-query";
-import React from "react";
-import Loader from "../commons/Loader";
-import { useRouter } from "next/navigation";
-import ButtonBack from "../commons/ButtonBack";
-import DetailsProduct from "./overview/DetailsProduct";
-import Custom404 from "../commons/404";
+import ProductService from '@/src/services/productServices';
+import { useQuery } from '@tanstack/react-query';
+import React from 'react';
+import Loader from '../commons/Loader';
+import { useRouter } from 'next/navigation';
+import ButtonBack from '../commons/ButtonBack';
+import DetailsProduct from './overview/DetailsProduct';
+import Custom404 from '../commons/404';
 
 interface Props {
   id: string;
@@ -32,9 +32,9 @@ const ProductOverview = ({ id }: Props) => {
           <span>Back</span>
         </ButtonBack>
       </header>
-      {status === "pending" ? (
+      {status === 'pending' ? (
         <Loader />
-      ) : status === "error" ? (
+      ) : status === 'error' ? (
         <Custom404 msgCustom={error as unknown as string} />
       ) : (
         <DetailsProduct data={data} />

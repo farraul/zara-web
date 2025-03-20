@@ -1,6 +1,6 @@
-"use client";
+'use client';
 
-import React, { PropsWithChildren } from "react";
+import React, { PropsWithChildren } from 'react';
 
 type typeProps = {} & React.DetailedHTMLProps<
   React.ButtonHTMLAttributes<HTMLButtonElement>,

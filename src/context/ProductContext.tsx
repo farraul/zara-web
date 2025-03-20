@@ -1,7 +1,7 @@
-import { createContext, Dispatch, SetStateAction, useContext } from "react";
-import { ProductSelected } from "../models/Product";
-import { toast } from "sonner";
-import useLocalStorage from "../hooks/useLocalStorage";
+import { createContext, Dispatch, SetStateAction, useContext } from 'react';
+import { ProductSelected } from '../models/Product';
+import { toast } from 'sonner';
+import useLocalStorage from '../hooks/useLocalStorage';
 
 interface Props {
   children: React.ReactNode | React.ReactNode[];
@@ -20,7 +20,7 @@ export function useCartProduct() {
 }
 
 export const ProductProvider = ({ children }: Props) => {
-  const [storage, setStorage] = useLocalStorage<ProductSelected[]>("cart", []);
+  const [storage, setStorage] = useLocalStorage<ProductSelected[]>('cart', []);
 
   const handleSelecteds = (data: ProductSelected) => {
     const total = [...storage, data];

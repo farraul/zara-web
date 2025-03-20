@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import { PropsWithChildren } from "react";
-import Header from "../commons/Header";
+import { PropsWithChildren } from 'react';
+import Header from '../commons/Header';
 
 const MainLayout = ({ children }: PropsWithChildren) => {
   return (

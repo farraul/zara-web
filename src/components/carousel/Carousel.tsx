@@ -1,7 +1,7 @@
-"use client";
+'use client';
 
-import React, { PropsWithChildren } from "react";
-import Carousel from "react-multi-carousel";
+import React, { PropsWithChildren } from 'react';
+import Carousel from 'react-multi-carousel';
 
 const CarouselComponent = ({ children }: PropsWithChildren) => {
   const responsive = {

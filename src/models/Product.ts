@@ -42,7 +42,7 @@ export interface Product {
 }
 
 export interface ProductSummary
-  extends Pick<Product, "id" | "name" | "brand" | "basePrice"> {
+  extends Pick<Product, 'id' | 'name' | 'brand' | 'basePrice'> {
   imageUrl: string;
 }
 
