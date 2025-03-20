@@ -32,6 +32,7 @@ const ProductContainer = () => {
           value={filter}
           onChange={(event) => handleFilter(String(event.target.value))}
           name="filter"
+          data-testid="filter"
           id="filter"
         />
         {status === 'success' ? (
