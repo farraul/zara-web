@@ -15,7 +15,7 @@ https://font.download/font/helvetica-255
 
 ## Run project
 
-npm i (install dependencies)
-npm run dev (start project)
-npx prettier --write .
-npx prettier --check .
+- npm i (install dependencies)
+- npm run dev (start project)
+- npx prettier --write .
+- npx prettier --check .
