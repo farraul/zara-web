@@ -9,7 +9,7 @@ import Button from '../../commons/Button';
 import { useCartProduct } from '@/src/context/ProductContext';
 import useProduct from '@/src/hooks/useProduct';
 import SpecificationsSelected from './SpecificationsSelected';
-import ItemProduct from '../ItemProduct';
+import ProductItem from '../ProductItem';
 import CarouselComponent from '../../carousel/Carousel';
 
 interface Props {
@@ -99,7 +99,7 @@ const DetailsProduct = ({ data }: Props) => {
         </h2>
         <CarouselComponent>
           {data.similarProducts.map((product) => (
-            <ItemProduct key={product.id} data={product} />
+            <ProductItem key={product.id} data={product} />
           ))}
         </CarouselComponent>
       </div>

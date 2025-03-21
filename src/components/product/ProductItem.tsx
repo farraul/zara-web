@@ -9,7 +9,7 @@ interface Props {
   data: ProductSummary;
 }
 
-const ItemProduct = ({ data }: Props) => {
+const ProductItem = ({ data }: Props) => {
   const { id, name, brand, basePrice, imageUrl } = data;
 
   return (
@@ -43,4 +43,4 @@ const ItemProduct = ({ data }: Props) => {
   );
 };
 
-export default ItemProduct;
+export default ProductItem;

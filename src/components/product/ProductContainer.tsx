@@ -4,7 +4,7 @@ import React from 'react';
 import FieldInput from '../commons/field/FieldInput';
 import { useQuery } from '@tanstack/react-query';
 import ProductService from '@/src/services/productServices';
-import ItemProduct from './ItemProduct';
+import ProductItem from './ProductItem';
 import useFilter from '@/src/hooks/useFilter';
 import Loader from '../commons/Loader';
 
@@ -42,7 +42,7 @@ const ProductContainer = () => {
             </span>
             <div className="w-full grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 2xl:grid-cols-5">
               {data?.map((product, index) => (
-                <ItemProduct
+                <ProductItem
                   key={`${product.id}-${product.name}-${index}`}
                   data={product}
                 />
